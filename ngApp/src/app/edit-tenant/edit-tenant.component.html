@@ -1,0 +1,38 @@
+<div class="col-md-5 mx-auto">
+	<div class="card rounded-0">
+		<div class="card-header">
+			<h3 class="mb-0">Edit Tenant</h3>
+		</div>
+		<div class="card-body">
+			<form [formGroup]="tenantEditForm" (ngSubmit)="updateTenant()" class="form">
+				<div class="form-group">
+					<label for="">Name</label>
+					<input formControlName="name" type="text" class="form-control rounded-0" appAutoFocus>
+				</div>
+				<div class="form-group">
+					<label for="">PAN no</label>
+					<input formControlName="pan_no" type="text" class="form-control rounded-0">
+				</div>
+				<div class="form-group">
+					<label for="">Aadhar No</label>
+					<input formControlName="aadhar_no" type="text" class="form-control rounded-0">
+				</div>
+				<div class="form-group">
+					<label for="">Building name</label>
+					<select formControlName="building_name" class="form-control rounded-0">
+						<option value="0">Select Building</option>
+						<option *ngFor="let building of buildings" value={{building.id}}>{{building.building_name}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="">Room No</label>
+					<select formControlName="room_no" class="form-control rounded-0">
+						<option value="0">Select Room No</option>
+						<option *ngFor="let room of rooms" value={{room.id}}>{{room.room_no}}</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-success float-right rounded-0">Save</button>
+			</form>
+		</div>
+	</div>
+</div>
